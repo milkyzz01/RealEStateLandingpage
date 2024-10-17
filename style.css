@@ -1,0 +1,689 @@
+/* Background Section Styles */
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+
+/* Background Section */
+.bg-section {
+    position: relative;
+    height: 90vh; /* Adjust as needed */
+    background: url('assets/landingphoto.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Creates the parallax effect */
+    background-position: 0 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.navbar{
+    width: 100%;
+}
+
+/* Parallax Scroll Effect */
+.bg-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit; /* Inherits the background image */
+    background-position: 0 0;
+    animation: parallax 15s linear infinite;
+}
+.custom-p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+    letter-spacing: 2px;
+}
+.custom-font{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.nav-item a{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.custom-title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    color: white; /* Text color to ensure contrast */
+    text-shadow: 
+        2px 2px 3px rgba(0, 0, 0, 0.6),    /* Dark shadow for depth */
+        0 0 10px rgba(255, 255, 255, 0.8),  /* Subtle white glow */
+        0 0 15px rgba(255, 255, 255, 0.6),  /* Larger white glow */
+        0 0 20px rgba(255, 255, 255, 0.4),  /* Outer white halo effect */
+        0 0 25px rgba(255, 255, 255, 0.2);  /* Faint outer glow for a stronger pop */
+        letter-spacing: 2px;
+}
+.navbar-brand{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.3),  /* Slight dark shadow for depth */
+    0 0 10px rgba(255, 0, 0, 0.7),   /* Glowing red shadow */
+    0 0 20px rgba(255, 0, 0, 0.5),   /* Larger glowing red shadow */
+    0 0 30px rgba(255, 0, 0, 0.3);   /* Outer glowing red shadow */
+}
+.navbar-brand span{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: red;
+    font-size: 25px;
+    font-weight: bolder;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),  /* Slight dark shadow for depth */
+        0 0 10px rgba(255, 0, 0, 0.7),   /* Glowing red shadow */
+        0 0 20px rgba(255, 0, 0, 0.5),   /* Larger glowing red shadow */
+        0 0 30px rgba(255, 0, 0, 0.3);   /* Outer glowing red shadow */
+}
+
+
+@keyframes parallax {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 50%; /* Scrolls to the right */
+    }
+}
+
+/* Overlay Styles */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darker overlay with opacity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1; /* Ensure the overlay is above the background */
+}
+
+/* Transparent Navbar */
+.navbar-transparent {
+    background-color: transparent !important;
+    box-shadow: none;
+    z-index: 2; /* Ensure navbar is above the overlay */
+}
+
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+    font-size: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Optional: Styling for the text inside the overlay */
+.overlay .container {
+    z-index: 10; /* Ensure text is on top of overlay */
+}
+
+.overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.overlay p {
+    font-size: 1.2rem;
+}
+
+/* Make extra-section sticky */
+.extra-section {
+    height: 10vh; /* Occupies the remaining 10vh */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 20; /* Ensure it's just below the navbar */
+}
+.offcanvas{
+    position: fixed;
+    z-index: 10000;
+    padding: 20px;
+}
+/* Change the navbar-toggler icon color to white */
+.navbar-toggler-icon {
+    width: 30px; /* Optional: Increase the width for better visibility */
+    height: 20px; /* Optional: Adjust height for better visibility */
+    background-size: contain; /* Ensure the icon fits well */
+  }
+
+  /* Optional: Add hover effect to make the icon more interactive */
+  .navbar-toggler:hover .navbar-toggler-icon {
+    background-color: rgba(255, 255, 255, 0.7); /* Lighter icon on hover */
+  }
+
+  /* Optional: Focus style for better accessibility */
+  .navbar-toggler:focus .navbar-toggler-icon {
+    box-shadow: none; /* Removes focus border */
+  }
+/* Ensure there is enough space when the navbar sticks */
+.sticky {
+    top: 60px; /* Adjust this value to the height of your navbar */
+}
+
+/* Search Box Styling */
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 60%; /* Adjust width of the search box */
+    background: transparent !important; /* Semi-transparent white background */
+    border-radius: 25px;
+    padding: 5px; /* Add some padding */
+    backdrop-filter: blur(5px); /* Optional: adds a blur effect */
+}
+
+.search-box i {
+    color: #333; /* Change the icon color to ensure visibility */
+    margin-right: 10px;
+}
+
+.search-box input {
+    border: none; /* Remove default border */
+    background: transparent; /* Make the input background transparent */
+    color: black; /* Change input text color */
+    padding: 8px 20px;
+    width: 100%; /* Full width */
+    border-radius: 25px; /* Keep rounded corners */
+}
+
+/* Book Appointment Text Styling */
+.book-appointment p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+/* Change the background and placeholder text color if needed */
+#searchInput {
+    background-color: #333; /* Dark background */
+    color: white; /* Default white text */
+    border: 1px solid #444;
+  }
+  
+  /* Placeholder text color */
+  #searchInput::placeholder {
+    color: #bbb; /* Light placeholder color */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+.search-box input::placeholder {
+    color: white; /* Set placeholder text color to black */
+    opacity: 1; /* Ensure the placeholder is fully visible */
+    font-size: larger;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items */
+    justify-content: center; /* Center align items */
+}
+
+.card-img-top {
+    max-width: 100%; /* Make sure the image doesn't overflow */
+    width: auto;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Frame Styling */
+.image-frame {
+    width: 90%; /* Adjust the width of the frame as needed */
+    max-width: 1000px; /* Optional: Set a maximum width for the frame */
+    margin: 0 auto; /* Center the frame horizontally */
+    border: 2px solid gray; /* Border color and width */
+    padding: 50px; /* Padding inside the frame */
+    overflow: hidden; /* Hide any overflow, so the image stays inside the frame */
+    border-radius: 10px; /* Optional: Rounded corners for the frame */
+     /* Stronger Box Shadow */
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+}
+
+/* Image Styling */
+.image-frame img {
+    width: 100%; /* Make the image fill the frame */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image fills the frame properly */
+}
+
+.decor-section .flex-item {
+    flex: 1; /* Make items grow to fill the available space */
+    height: 400px; /* Optional: You can set a height for the divs */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.decor-section .flex-itemm {
+    flex: 1; /* Make items grow to fill the available space */
+    height: 400px; /* Optional: You can set a height for the divs */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Styling for the .border-1 div */
+.border-1 {
+    position: relative; /* Allow positioning of overlay pseudo-element */
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 1px;
+    background-color: rgb(250, 245, 245); /* Keep the background transparent */
+    
+     /* Stronger Box Shadow */
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+}
+
+.rounded-top-left{
+    border-top-left-radius: 15px;
+}
+
+.rounded-top-right{
+    border-top-right-radius: 15px;
+}
+
+.rounded-bottom-right{
+    border-bottom-right-radius: 15px;
+}
+.rounded-bottom-left{
+    border-bottom-left-radius: 15px;
+}
+
+/* Apply an overlay effect using the ::before pseudo-element */
+
+.decor-img{
+    object-fit: cover;
+    max-width: 100%; /* Ensures the image never exceeds its container width */
+    height: 100%; /* Maintains aspect ratio */
+}
+
+.decor-section .row {
+    margin-bottom: 20px;
+}
+
+/* Styling for the selling process section */
+.selling-process-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background: url('assets/slides/11.jpg') no-repeat center center; /* Background image */
+    background-size: cover; /* Make sure the image covers the entire section */
+}
+
+.selling-process-section2 {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background: url('assets/slides/12.jpg') no-repeat center center; /* Background image */
+    background-size: cover; /* Make sure the image covers the entire section */
+}
+
+/* First Dark Overlay (lighter) */
+.first-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with 50% opacity */
+    z-index: 1; /* Below content, above background */
+}
+/* Apply justify text alignment */
+label.form-check-label {
+    text-align: justify;
+    display: block; /* Make label a block-level element */
+    line-height: 1.4; /* Adjust line height for better readability */
+    overflow-wrap: break-word; /* Ensure text doesn't overflow */
+  }
+
+  /* Style for social icons */
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+  }
+  
+  
+  .social-icon:hover {
+    background-color: #333; /* Darken on hover */
+  }
+  
+  /* Center text below the icons */
+  p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Ensure responsive behavior */
+  @media (max-width: 767px) {
+    .social-icon {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      font-size: 16px;
+    }
+  
+    p {
+      font-size: 12px;
+    }
+  }
+  
+  
+  /* For smaller screens, make sure the text is not justified */
+  @media (max-width: 768px) {
+    label.form-check-label {
+      text-align: left; /* Align text to the left for smaller screens */
+      line-height: 1.6; /* Slightly larger line height for better readability on small screens */
+    }
+  }
+.custom-font{
+    font-size: 12px;
+}
+/* Second Dark Overlay (darker) */
+.second-overlay {
+    content: '';
+    position: absolute;
+    top: 25%; /* Start from 25% of the section's height */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    width: 80%; /* Make it take up 80% of the section’s width */
+    height: 60%; /* Set the height of the overlay (adjust as needed) */
+    background-color: rgba(0, 0, 0, 0.8); /* Darker overlay with 80% opacity */
+    z-index: 2; /* Above the first overlay */
+    display: flex;
+    align-items: center;  /* Vertically center the content inside the overlay */
+    justify-content: center; /* Horizontally center the content inside the overlay */
+    border-radius: 20px;
+    
+}
+
+/* Content inside the second overlay */
+.second-overlay .container {
+    z-index: 3; /* Ensure the content is on top of both overlays */
+    text-align: center;
+    padding: 50px;
+}
+
+/* Optional: Adjust text styling if needed */
+.second-overlay h2 {
+    font-size: 3rem; /* Larger title */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.second-overlay p {
+    font-size: 1.25rem;
+}
+
+/* Success Section Adjustments */
+.success-img {
+    width: 100%;  /* Ensure the image doesn't exceed its container width */
+    height: auto; /* Maintain the aspect ratio */
+}
+
+/* Style for the Read More button */
+#readMoreBtn {
+    font-weight: bold;
+    color: #007bff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#readMoreBtn:hover {
+    text-decoration: underline;
+}
+
+/* Extra content style (optional) */
+.extra-desc {
+    margin-top: 10px;
+}
+
+.exposure-container{
+    border-radius: 20px;
+    background-color: rgb(250, 245, 245);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.08); /* Slightly stronger shadow */
+}
+.trulia-img{
+    width: 300px;
+    height: auto;
+}
+
+.luxury-img{
+    width: 30%;
+}
+
+/* Ensure the section takes full viewport height and has a background image */
+.work-with-us {
+    position: relative;
+    height: 100vh;
+    background-image: url('assets/slides/13.jpg'); /* Replace with your desired image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Overlay to create the dark background */
+.work-with-us .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Content container that holds title, line, paragraph, and button */
+.work-with-us .content {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Title styling */
+.work-with-us h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Horizontal line with a specific width */
+.work-with-us .divider {
+    width: 60px;
+    height: 2px;
+    background-color: white;
+    border: none;
+    margin: 20px auto;
+}
+
+/* Paragraph styling */
+.work-with-us p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Button styling with transparent background and white border */
+.work-with-us .contact-btn {
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+}
+
+/* Button hover effect */
+.work-with-us .contact-btn:hover {
+    background-color: white;
+    color: #333;
+}
+
+
+@media (max-width: 767px) {
+    .threeexp {
+        margin-bottom: 15px; /* Adds margin at the bottom of each column on smaller screens */
+    }
+}
+
+/* Adjust text sizes on smaller screens */
+@media (max-width: 768px) {
+    .desc h1 {
+        font-size: 1.5rem; /* Smaller heading for mobile */
+        margin-top: 20px;
+    }
+
+    .desc p {
+        font-size: 1rem; /* Smaller text for mobile */
+    }
+}
+
+@media (max-width: 767px) {
+    /* On small screens, stack the items */
+    .decor-section .col-12 {
+        display: block;
+    }
+    .decor-section .flex-item {
+        margin-bottom: 0px; /* Optional: Add some spacing between stacked items */
+    }
+}
+
+@media (min-width: 768px) {
+    /* On medium screens and larger, display items side by side */
+    .decor-section .d-flex {
+        display: flex;
+        gap: 0;
+    }
+}
+/* Default font size for large screens */
+h2.mb-4 {
+    font-size: 3rem; /* Adjust the size for larger screens */
+}
+
+/* Responsive font size for smaller screens */
+@media (max-width: 768px) {
+    h2.mb-4 {
+        font-size: 2.5rem; /* Slightly smaller font size for medium screens */
+    }
+}
+
+@media (max-width: 576px) {
+    h2.mb-4 {
+        font-size: 2rem; /* Even smaller font size for smaller screens */
+    }
+}
+
+/* Swiper Container Background */
+.swiper {
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Light dark overlay */
+    border-radius: 10px; /* Optional: Rounded corners for swiper container */
+}
+
+/* Swiper Slide Styles */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover; /* Make sure the background image covers the entire slide */
+    background-position: center center; /* Center the background image */
+    position: relative; /* For positioning the overlay */
+    height: 100%; /* Ensure each swiper item fills its container */
+}
+
+/* Dark overlay for each swiper item */
+.swiper-slide::before {
+    content: ''; /* Create an empty pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1; /* Ensure the overlay is on top of the background */
+}
+
+/* Skill Card styles */
+.skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 200px;
+    width: 100%; /* Ensure the skill cards occupy full width */
+    background-color: rgba(41, 39, 39, 0.7); /* Slight white background for skill cards */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px; /* Optional: Rounded corners for skill cards */
+    position: relative; /* To make sure the text stays above the overlay */
+    z-index: 2; /* Ensure content is above the overlay */
+}
+
+/* Hover effect on skill card */
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Swiper Container Styles */
+.swiper {
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Optional: background color for swiper container */
+    border-radius: 10px; /* Optional: Rounded corners for swiper container */
+}
+
+/* Navigation button styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff;
+}
+
+/* Active Pagination Bullet Style */
+.swiper-pagination-bullet-active {
+    background: orange;
+}
+
+/* Swiper Container Max Width */
+.swiper-container {
+    width: 100%;
+    max-width: 300px; /* Set a max-width for the container */
+    margin: auto;
+}
+
+
+/* Optional: Additional Styling for Pagination */
+.swiper-pagination {
+    bottom: 10px;
+}
+

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>Real Estate</title>
+    <style>
+        .card-img-top {
+            height: 200px; /* Adjust height as needed */
+            object-fit: cover; /* This will maintain the aspect ratio */
+        }
+
+        .navbar {
+            transition: top 0.3s; /* Smooth transition for top property */
+        }
+        /* Initially set the navbar to be at the top of the page */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+        }
+        /* This class will be added when the user scrolls down */
+        .navbar-hidden {
+            top: -100px; /* Move the navbar out of view */
+        }
+        .blue-bg {
+    background-color: rgb(37, 37, 39); /* Add the blue background */
+}
+    </style>
+</head>
+<body>
+
+<!-- Background Section -->
+<section class="bg-section">
+    <!-- Transparent Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" data-aos="fade" href="#">Luxury<span>Estate</span></a>
+            <!-- Toggler button for offcanvas on smaller screens -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars text-white"></i>
+            </button>
+            <!-- Collapsible Navbar (Will not show on mobile when offcanvas is active) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+ 
+    <!-- Offcanvas Sidebar (hidden by default) -->
+    <div class="offcanvas offcanvas-end bg-dark" tabindex="2" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-aos="fade" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-aos="fade" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-aos="fade" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-aos="fade" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+ 
+    <!-- Overlay and Background Image -->
+    <div class="overlay">
+        <div class="container text-center text-white">
+            <h1 class="custom-title" data-aos="fade">Welcome to Service Page</h1>
+            <p class="custom-p" data-aos="fade">Your Dream Home Awaits</p>
+        </div>
+    </div>
+ </section>
+
+
+<!-- Remaining Section with Search Input and Book Appointment -->
+<section class="extra-section bg-dark">
+    <div class="container d-flex align-items-center justify-content-between h-100">
+        <!-- Search Input -->
+        <div class="search-box d-flex align-items-center" data-aos="fade">
+            <i class="fas fa-search text-white"></i>
+            <input type="text" id="searchInput" class="form-control" placeholder="Search by Address or Area" />
+        </div>
+
+        <!-- Book Appointment Text -->
+        <div class="book-appointment d-flex align-items-center gap-3">
+            <p class="text-white custom-font mb-3 d-md-block d-none" data-aos="fade">Book Appointment</p>
+            <i class="fas fa-arrow-right text-white" data-aos="fade"></i>
+        </div>
+    </div>
+</section>
+
+<!-- Comprehensive section -->
+<section class="comprehensive-section py-5 container">
+    <div class="container text-center">
+        <!-- Title -->
+        <h2 class="display-5 mt-3 mb-4 custom-font" data-aos="fade">Comprehensive Marketing Plan</h2>
+
+        <!-- Cards -->
+        <div class="row">
+            <!-- Card 1: Responsive -->
+            <div class="col-sm-6 mb-4">
+                <div class="card h-100">
+                    <img src="assets/responsive.jpg" data-aos="zoom-in" class="card-img-top" alt="Responsive">
+                    <div class="card-body">
+                        <h5 class="card-title fs-4 fw-bold custom-font" data-aos="fade">Responsive</h5>
+                        <p class="card-text" data-aos="fade-up">I am always available via phone, text, or email.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Always Available -->
+            <div class="col-sm-6 mb-4">
+                <div class="card h-100">
+                    <img src="assets/syndication.jpg" data-aos="zoom-in" class="card-img-top" alt="Always Available">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold fs-4 custom-font" data-aos="fade">Syndication</h5>
+                        <p class="card-text" data-aos="fade-up">I market your property locally, nationally, and internationally.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Frame Section for Image -->
+<section class="container">
+    <!-- Div to act as the frame -->
+    <div class="image-frame d-flex justify-content-center">
+        <!-- The Image inside the frame -->
+        <img src="assets/extra-img.jpg" data-aos="zoom-in" alt="extraimg" class="img-fluid">
+    </div>
+</section>
+
+<!-- Comprehensive section -->
+<section class="comprehensive-section py-5 mt-5 container">
+    <div class="container text-center">
+
+        <!-- Cards -->
+        <div class="row d-flex">
+            <!-- Card 1: Responsive -->
+            <div class="col-sm-6 mb-4">
+                <div class="card h-100">
+                    <img src="assets/virtual.jpg" data-aos="zoom-in" class="card-img-top" alt="Responsive">
+                    <div class="card-body">
+                        <h5 class="card-title fs-4 fw-bold custom-font" data-aos="fade">Virtual Tour</h5>
+                        <p class="card-text" data-aos="fade-up">Let's make your home stand out with a high quality virtual tour.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Always Available -->
+            <div class="col-sm-6 mb-4">
+                <div class="card h-100">
+                    <img src="assets/photography.jpg" class="card-img-top" data-aos="zoom-in" alt="Always Available">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold fs-4 custom-font" data-aos="fade">Photography</h5>
+                        <p class="card-text" data-aos="fade-up">Beautiful, high-end photography is a central part of our marketing plan for your property.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Decor Section -->
+<section class="decor-section container py-5">
+    <div class="container border-1">
+        <!-- Flexbox layout for the 4 divs -->
+        <div class="row">
+            <!-- First set of divs displayed flex -->
+            <div class="col-12 col-md-12 d-flex gap-0">
+                <div class="flex-item bg-dark fs-1 text-white rounded-top-left custom-font" data-aos="fade-up">Decor Guidance</div>
+                <div class="flex-item bg-light"><img src="assets/decor.jpg" data-aos="zoom-in" class="decor-img rounded-top-right" alt="decor"></div>
+            </div>
+
+            <!-- Second set of divs displayed flex -->
+            <div class="col-12 col-md-12 d-flex gap-0">
+                <div class="flex-item bg-light"><img src="assets/staging.jpg" class="decor-img rounded-bottom-left" data-aos="zoom-in" alt="decor"></div>
+                <div class="flex-itemm bg-light rounded-bottom-right" data-aos="fade-up">
+                    <h1 class="mb-5">My Staging Expertise</h1>
+                    <ul>
+                        <li>Unclutter and organize your home</li>
+                        <li>Neatly arrange drawers and cabinets</li>
+                        <li>Keep pets outdoors or off the premises</li>
+                        <li>Play soft music</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Decor Section -->
+<section class="decor-section container mb-5">
+    <div class="container border-1">
+        <!-- Flexbox layout for the 4 divs -->
+        <div class="row">
+            <!-- First set of divs displayed flex -->
+            <div class="col-12 col-md-12 d-flex gap-0">
+                <div class="flex-item bg-dark fs-1 text-white rounded-top-left custom-font" data-aos="fade-up">Intentional Layout</div>
+                <div class="flex-item bg-light"><img src="assets/intentional.jpg" data-aos="zoom-in" class="decor-img rounded-top-right" alt="decor"></div>
+            </div>
+
+            <!-- Second set of divs displayed flex -->
+            <div class="col-12 col-md-12 d-flex gap-0">
+                <div class="flex-item bg-light"><img src="assets/extra2.jpg" data-aos="zoom-in" class="decor-img rounded-bottom-left" alt="decor"></div>
+                <div class="flex-itemm bg-light rounded-bottom-right" data-aos="fade-up">
+                    <h1 class="mb-5">My Staging Expertise</h1>
+                    <ul>
+                        <li>Unclutter and organize your home</li>
+                        <li>Neatly arrange drawers and cabinets</li>
+                        <li>Keep pets outdoors or off the premises</li>
+                        <li>Play soft music</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Selling Process Section -->
+<section class="selling-process-section2">
+    <!-- First Overlay (lighter dark) -->
+    <div class="first-overlay"></div>
+    
+    <!-- Second Overlay (darker dark) -->
+    <div class="second-overlay">
+        <div class="container text-center text-white" data-aos="zoom-in">
+            <h2 class="mb-4 custom-font"> The Selling Process</h2>
+                            <!-- Swiper -->
+            <div class="swiper mySwiper mt-4">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image: url('assets/slides/1.jpg');">
+                        <div class="skill-card">
+                            <h5>1. Initial Consultation & Planning</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide" style="background-image: url('assets/slides/2.jpg');">
+                        <div class="skill-card">
+                            <h5>2. Devise & Execute Marketing Plan</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide" style="background-image: url('assets/slides/3.jpg');">
+                        <div class="skill-card">
+                            <h5>3. Review Offers & Reach Agreement with Buyer</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide" style="background-image: url('assets/slides/4.jpg');">
+                        <div class="skill-card">
+                            <h5>4. Complete Transaction Process</h5>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide" style="background-image: url('assets/slides/5.jpg');">
+                        <div class="skill-card">
+                            <h5>5. After - Sale Service</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Scrollbar (optional) -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Selling Process Section -->
+<section class="selling-process-section">
+    <!-- First Overlay (lighter dark) -->
+    <div class="first-overlay"></div>
+    
+    <!-- Second Overlay (darker dark) -->
+    <div class="second-overlay">
+        <div class="container text-center text-white" data-aos="zoom-in">
+            <h2 class="mb-4 custom-font">The Buying Process</h2>
+            
+            <!-- Swiper -->
+            <div class="swiper mySwiper mt-4">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="background-image: url('assets/slides/1.jpg');">
+                        <div class="skill-card">
+                            <h5>1. Initial Consultation & Planning</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide" style="background-image: url('assets/slides/2.jpg');">
+                        <div class="skill-card">
+                            <h5>2. Search for a Home & Get Pre-Approved</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide" style="background-image: url('assets/slides/3.jpg');">
+                        <div class="skill-card">
+                            <h5>3. Submit an Offer</h5>
+                        </div>
+                    </div>
+                    
+                    <div class="swiper-slide" style="background-image: url('assets/slides/4.jpg');">
+                        <div class="skill-card">
+                            <h5>4. Complete Settlement Process</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Scrollbar (optional) -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Success Section -->
+<section class="container mt-5 mb-3">
+    <div class="row align-items-center">
+        <!-- Description -->
+        <div class="desc text-center text-md-start col-md-6 order-2 order-md-1" data-aos="fade-up">
+            <h1>Over 33 Years of Real Estate Success</h1>
+            <p>
+                We provide every one of our clients with a level of service they won’t
+                find anywhere else. We give them what they need, often before they know they need it.
+                In real estate, almost everything can be negotiated. When you choose Hansen Partners,
+                experience is 100% nonnegotiable. And it’s an experience like no other.
+            </p>
+        </div>
+
+        <!-- Image -->
+        <div class="text-center col-md-6 success-wrapper order-1 order-md-2">
+            <img src="assets/success.jpg" data-aos="zoom-in" class="success-img img-fluid" alt="success">
+        </div>
+    </div>
+</section>
+<!-- Success Section -->
+<section class="container mt-5 mb-3">
+    <div class="row align-items-center constainer">
+         <!-- Image -->
+         <div class="text-center col-md-6 success-wrapper order-1 order-md-1">
+            <img src="assets/unforget.jpg" data-aos="zoom-in" class="success-img img-fluid" alt="success">
+        </div>
+        <!-- Description -->
+        <div class="desc text-center container text-md-start col-md-6 order-2 order-md-2" data-aos="fade-up">
+            <h1>We Want To Create An Unforgettable Experience For You...</h1>
+            <p>
+                We combine data gained from your home’s Comparative Market Analysis with local market research to create a marketing plan designed to help you meet your selling goals. Your home’s carefully designed plan will include a range of online, print, and other marketing tools targeted to the best-qualified pool of buyers. ​​​​​​​ Successfully marketing a home in today’s real estate environment requires a firm with experience and flexibility. Hansen Partners provides both.
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Success Section -->
+<section class="container mt-5">
+    <div class="row align-items-center">
+         <!-- Image -->
+         <div class="text-center col-md-6 success-wrapper order-1 order-md-2">
+            <img src="assets/hansen.jpg" data-aos="zoom-in" class="success-img img-fluid" alt="success">
+        </div>
+        <!-- Description -->
+        <div class="desc text-center container text-md-start col-md-6 order-2 order-md-1" data-aos="fade-up">
+            <h1>The Hansen Partners Communications Tablet</h1>
+            <p class="mb-2">
+                We have created this as a wonderful tool so that we can communicate with you daily, provide you with updates on what is happening with your home. We are available at the with a click of your tablet.
+            </p>
+            <p>Benefits:</p>
+            <ul class="mb-2">
+                <!-- Initially show only the first <li> -->
+                <li id="li-1">Review all documents and sign in the comfort of your home or anywhere.</li>
+                <!-- Hidden additional <li> elements -->
+                <li class="more-li" style="display: none;">Stay up to date on all marketing activities, review materials, photos, etc. in real time.</li>
+                <li class="more-li" style="display: none;">Meet with us face to face on our Gotomeeting.com platform to go over and discuss the events of the week.</li>
+                <li class="more-li" style="display: none;">You have your own email assigned just for you and your common space to quickly write a note, or quickly send a video message to us for fast communication using our Bomb bomb video messaging system.</li>
+            </ul>
+
+            <!-- Hidden content for extra description -->
+            <div id="extraDesc" class="extra-desc" style="display: none;">
+                <p>
+                    We believe that transparency and guiding you and your family through the process is key to having the best experience.  During these uncertain times. It is a good feeling to know you have someone with a proven track record you can count on. We will be here to handle your needs during the Real Estate process. We think of it before a need even arises. Because, that is just what we do. Who you work with does matter! 
+                </p>
+            </div>
+
+            <!-- Read More / Read Less button -->
+            <button id="readMoreBtn" class="btn btn-link text-decoration-none" onclick="toggleReadMore()">Read More</button>
+        </div>
+    </div>
+</section>
+
+<!--market home section-->
+<section class="container mt-5 mb-5">
+    <div class="exposure-container p-5">
+        <h1 class="text-center mb-4" data-aos="fade">We Market Your Home to The World</h1>
+        <h4 class="fw-bold text-center mb-4" data-aos="fade-up">Our Online Marketing Strategy</h4>
+        <p class="text-center" data-aos="fade-up">
+            ​​​​​​​The Bay Area remains one of the world's most sought-after regions to live in, and when looking to sell, it is vital that your home be marketed online to audiences locally, nationally, and internationally.
+        </p>
+
+        <div class="row mt-5">
+            <div class="threeexp p-4 col-md-4" data-aos="fade-down">
+                <h4 class="mb-4 text-center">Local Exposure</h4>
+                <p class="text-center">
+                    Through our partnership with Nextdoor, the private online social network now used in over 80% of U.S. neighborhoods and virtually all Bay Area neighborhoods, we make sure your home receives targeted local exposure. When you list your home with Hansen Partners it will automatically appear on Nextdoor in your neighborhood.
+                </p>
+            </div>
+            <div class="threeexp col-md-4 p-4" data-aos="fade-down">
+                <h4 class="mb-4 text-center">National Exposure</h4>
+                <p class="text-center">
+                    We secure strategic positioning and enhancement on Realtor.com, Trulia, and Zillow, driving more consumers to your home and increasing exposure. We  will receive every inquiry about your property directly.
+                </p>
+            </div>
+            <div class="threeexp col-md-4 p-4" data-aos="fade-down">
+                <h4 class="mb-4 text-center">International Exposure</h4>
+                <p class="text-center">
+                    To expose your luxury listing to millions of potential homebuyers worldwide, we promote on prominent international real estate portals, including: Wall Street Journal, LuxuryPortfolio.com, LuxuryRealEstate.com, LeadingRE.com, UniqueHomes.com, 
+                    China.apr.com, Caimeiju, Juwai, Country Life UK
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="trulia d-flex justify-content-center align-items-center mb-5">
+    <img src="assets/trulia.jpg" class="trulia-img"alt="trulia">
+</section>
+
+<!-- luxury Section -->
+<section class="container mt-5 mb-5">
+    <div class="row align-items-center">
+        <!-- Description -->
+        <div class="desc text-center text-md-start col-md-6 order-2 order-md-1" data-aos="fade-down">
+            <div class="d-flex align-items-center gap-4 justify-content-center mb-5 mt-5">
+                <img src="assets/real.jpg" class="luxury-img" alt="real">
+                <img src="assets/leading.jpg" class="luxury-img" alt="leading">
+                <img src="assets/port.jpg" class="luxury-img" alt="port">
+            </div>
+            <p class="mb-4">
+                Leading Real Estate Companies of The World® & Luxury Portfolio International
+            </p>
+            <p class="mb-4">
+                JRockcliff is a founding member of Luxury Portfolio International®, the luxury division of Leading Real Estate Companies of the World®. With more than 500 member firms around the world, Our luxury listings are exposed to a vast global audience and reach potential buyers and investors in over 50 countries.
+
+            </p>
+            <p class="text-center">
+                Who's Who in Luxury Real Estate
+            </p>
+            <p>Who’s Who in Luxury Real Estate is a global collection of luxury real estate brokers.</p>
+        </div>
+
+        <!-- Image -->
+        <div class="text-center col-md-6 success-wrapper order-1 order-md-2">
+            <img src="assets/luxury.jpg" data-aos="zoom-in" class="success-img img-fluid" alt="success">
+        </div>
+    </div>
+</section>
+
+<!-- luxury Section -->
+<section class="container mt-5 mb-5">
+    <div class="row align-items-center">
+        <!-- Description -->
+        <div class="desc text-center text-md-start col-md-6 order-2 order-md-2" data-aos="fade-down">
+            <p class="mb-5">
+                Through our international affiliations, we have a strong presence in over 50 countries. Our luxury listings are sent to prominent international real estate sites, reaching over 70 million potential buyers and investors worldwide through our relationships with:
+            </p>
+            <div class="d-flex align-items-center gap-4 justify-content-center mb-5 mt-5">
+                <img src="assets/real.jpg" class="luxury-img" alt="real">
+                <img src="assets/leading.jpg" class="luxury-img" alt="leading">
+                <img src="assets/port.jpg" class="luxury-img" alt="port">
+            </div>
+            <p class="mb-4">
+                We also have several well-positioned affiliate offices in China, providing our clients with access to buyers in Hong Kong, Shanghai, and Beijing. 
+            </p>
+            
+        </div>
+
+        <!-- Image -->
+        <div class=" col-md-6 success-wrapper order-1 order-md-1">
+            <img src="assets/global.jpg" data-aos="zoom-in" class="success-img img-fluid mb-4" alt="success">
+        </div>
+    </div>
+</section>
+
+
+<!-- luxury Section -->
+<section class="container mt-5 mb-5">
+    <div class="row align-items-center justify-content-center d-flex gap-4">
+        <!-- Description -->
+        <div class="desc text-center row d-flex col-12 col-md-6 order-2 order-md-1 gap-0">
+            <div class="h-100 col-12 col-md-12 col-lg-6" data-aos="fade-down">
+                <img src="assets/responsive.jpg" class="card-img-top" alt="Responsive">
+                <div class="card-body text-center">
+                    <h5 class="card-title fs-4 fw-bold">Responsive</h5>
+                    <p class="card-text">I am always available via phone, text, or email.</p>
+                </div>
+            </div>
+
+            <div class="h-100 col-12 col-md-12 col-lg-6" data-aos="fade-down">
+                <img src="assets/syndication.jpg" class="card-img-top" alt="Responsive">
+                <div class="card-body text-center">
+                    <h5 class="card-title fs-4 fw-bold">Syndication</h5>
+                    <p class="card-text">I market your property locally, nationally, and internationally.</p>
+                </div>
+            </div>
+
+            <div class="h-100 col-12 col-md-12 col-lg-6" data-aos="fade-down">
+                <img src="assets/virtual.jpg" class="card-img-top" alt="Responsive">
+                <div class="card-body text-center">
+                    <h5 class="card-title fs-4 fw-bold">Virtual Tour</h5>
+                    <p class="card-text">Let’s make your home stand out with a high quality virtual tour.</p>
+                </div>
+            </div>
+
+            <div class="h-100 col-12 col-md-12 col-lg-6" data-aos="fade-down">
+                <img src="assets/drone.jpg" class="card-img-top" alt="Responsive">
+                <div class="card-body text-center">
+                    <h5 class="card-title fs-4 fw-bold">Drone Photography</h5>
+                    <p class="card-text">Beautiful photography is a central part of our marketing plan for your property.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image -->
+        <div class="text-center col-12 col-md-6 success-wrapper order-1 order-md-2">
+            <img src="assets/phone.jpg" data-aos="zoom-in" class="success-img img-fluid" alt="success">
+        </div>
+    </div>
+</section>
+
+<section class="work-with-us" data-aos="zoom-out">
+    <div class="overlay">
+        <div class="content">
+            <h1 class="custom-title" data-aos="fade-down">Work With Us</h1>
+            <hr class="divider">
+            <p class="text-white" data-aos="fade-down">
+                With decades of experience in luxurious Tri Valley real estate, our team is here to ensure that your dreams are a reality.
+                Let us guide you through your home buying journey, contact us today!
+            </p>
+            <a href="#contact" class="contact-btn">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-6 p-5">
+            <h1>Julie Hansen Partnership</h1>
+            <p>
+                An elite group of the East Bay’s most talented and visionary real estate professionals believed buyers and sellers deserved more from their real estate company. More service. More resources. More integrity. More global reach. In a word, more of everything people should expect when they buy or sell their homes.
+            </p>
+        </div>
+        <div class="col-md-6 p-5">
+            <h1>Newsletter</h1>
+            <p>
+                Subscribe to our Newsletter for latest news and updates. Stay tuned! 
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="container mb-5">
+    <div class="row">
+        <div class="col-md-4 p-5">
+            <h4 class="fw-bold" style="font-family: 'Poppins', sans-serif;">ADDRESS</h4>
+            <p style="font-family: 'Poppins', sans-serif;">4733 Chabot Drive #100</p>
+            <p style="font-family: 'Poppins', sans-serif;">Pleasanton, CA 94588</p>
+            <p style="font-family: 'Poppins', sans-serif;">Julie Hansen-Orvis | CA DRE# 00934447</p>
+        </div>
+        <div class="col-md-4 p-5">
+            <h4 class="fw-bold fs-5" style="font-family: 'Poppins', sans-serif;">CONTACT INFORMATION</h4>
+            <p style="font-family: 'Poppins', sans-serif;">(925) 553-6707</p>
+            <p style="font-family: 'Poppins', sans-serif;">luxuryhomesinwc@icloud.com</p>
+        </div>
+        <div class="col-md-4 p-5">
+            <!-- Input for email address -->
+            <input type="text" class="form-control mb-3" placeholder="Email Address">
+          
+            <!-- Checkbox and paragraph side by side -->
+            <div class="d-flex align-items-start mb-3">
+              <input class="form-check-input me-3 w-100" type="checkbox" id="privacyPolicy">
+              <label class="form-check-label custom-font" style="font-family: 'Poppins', sans-serif;" for="privacyPolicy">
+                By providing Julie Hansen Partnership your contact information, you acknowledge and agree to our Privacy Policy and consent to receiving marketing communications, including through automated calls, texts, and emails, some of which may use artificial or prerecorded voices. This consent isn’t necessary for purchasing any products or services and you may opt out at any time. To opt out from texts, you can reply, ‘stop’ at any time. To opt out from emails, you can click on the unsubscribe link in the emails. Message and data rates may apply.
+              </label>
+            </div>
+          
+            <!-- Subscribe Button -->
+            <button class="btn btn-outline-dark w-auto">Subscribe</button>
+          </div>          
+    </div>
+</section>
+
+<section class="p-4 pt-5 pb-3 bg-dark">
+    <div class="row align-items-center">
+      <!-- First div with icons and text -->
+      <div class="col-md-6 mb-4">
+        <!-- Social Icons -->
+        <div class="d-flex justify-content-center mb-3">
+          <!-- Facebook Icon -->
+          <a href="#" class="social-icon me-3">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <!-- LinkedIn Icon -->
+          <a href="#" class="social-icon">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <!-- Text below the icons -->
+        <p class="text-center text-white fs-6 fw-bold" style="font-family: 'Poppins', sans-serif;">Website Designed & Developed by Luxury Presence</p>
+      </div>
+  
+      <div class="col-md-6 mb-4">
+        <!-- Social Icons (Replaced with images) -->
+        <div class="d-flex justify-content-center gap-4 mb-3">
+          <!-- Facebook Image -->
+          <a href="#" class="social-ico me-3">
+            <img src="assets/slides/7.jpg" alt="Facebook" class="img-fluid" style="width: 34px; height: 40px;">
+          </a>
+          <!-- LinkedIn Image -->
+          <a href="#" class="social-ico">
+            <img src="assets/slides/8.jpg" alt="LinkedIn" class="img-fluid" style="width: 34px; height: 40px;">
+          </a>
+
+          <a href="#" class="social-ico">
+            <img src="assets/slides/9.jpg" alt="LinkedIn" class="img-fluid" style="width: 100px; height: 40px;">
+          </a>
+        </div>
+        <!-- Text below the icons -->
+        <p class="text-center text-white fs-6 fw-bold" style="font-family: 'Poppins', sans-serif;">Copyright 2024 | Privacy Policy</p>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+<!-- Existing Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    // Initialize AOS (for scroll animations)
+    AOS.init();
+
+     // Initialize Swiper
+     var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 10,
+                },
+                640: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 3.5,
+                    spaceBetween: 30,
+                },
+                1400: {
+                    slidesPerView: 4.5,
+                    spaceBetween: 40,
+                },
+            },
+        });
+</script>
+<script src="index.js"></script>
+
+</body>
+</html>
